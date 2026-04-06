@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>近所ごはんノート | 本庄の地元めし、みんなで記録</title>
+<meta name="description" content="近所ごはんノートは、本庄市周辺の個人経営の飲食店をみんなで応援するLINE公式アカウントです。お気に入りの一軒を、一緒に記録しませんか。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6ec;
+    --paper-dark:#f2ead2;
+    --ink:#3b2f2a;
+    --ink-soft:#6b5a50;
+    --amber:#c9892e;
+    --amber-dark:#a76e18;
+    --line-green:#06c755;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    font-family:"Zen Maru Gothic",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  body{
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(201,137,46,.08), transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(201,137,46,.06), transparent 45%),
+      repeating-linear-gradient(0deg, transparent 0 31px, rgba(107,90,80,.08) 31px 32px);
+  }
+  .container{max-width:780px;margin:0 auto;padding:0 24px}
+  header{padding:56px 0 32px;text-align:center}
+  .logo{
+    font-family:"Zen Kurenaido",serif;
+    font-size:22px;
+    color:var(--amber-dark);
+    letter-spacing:.08em;
+  }
+  .hero{padding:32px 0 64px;text-align:center}
+  .hero h1{
+    font-family:"Zen Kurenaido",serif;
+    font-size:clamp(32px,6vw,52px);
+    line-height:1.4;
+    color:var(--ink);
+    margin-bottom:24px;
+  }
+  .hero h1 .accent{color:var(--amber-dark)}
+  .hero p.lead{
+    font-size:17px;
+    color:var(--ink-soft);
+    margin-bottom:40px;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--line-green);
+    color:#fff;
+    padding:16px 36px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:17px;
+    box-shadow:0 6px 20px rgba(6,199,85,.28);
+    transition:transform .2s;
+  }
+  .cta:hover{transform:translateY(-2px)}
+  .cta small{font-weight:400;font-size:13px;opacity:.9}
+  section{padding:56px 0;border-top:1px dashed rgba(107,90,80,.35)}
+  h2{
+    font-family:"Zen Kurenaido",serif;
+    font-size:28px;
+    color:var(--ink);
+    margin-bottom:32px;
+    text-align:center;
+  }
+  h2::before{content:"　"}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:600px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:var(--paper-dark);
+    border:1px solid rgba(107,90,80,.18);
+    border-radius:14px;
+    padding:24px;
+    box-shadow:0 2px 0 rgba(107,90,80,.08);
+  }
+  .card h3{
+    font-family:"Zen Kurenaido",serif;
+    font-size:19px;
+    color:var(--amber-dark);
+    margin-bottom:10px;
+  }
+  .card p{font-size:14.5px;color:var(--ink-soft)}
+  .steps{counter-reset:step;max-width:560px;margin:0 auto}
+  .step{
+    position:relative;
+    padding:20px 20px 20px 72px;
+    margin-bottom:16px;
+    background:var(--paper-dark);
+    border-radius:12px;
+    border:1px solid rgba(107,90,80,.18);
+  }
+  .step::before{
+    counter-increment:step;
+    content:counter(step);
+    position:absolute;
+    left:20px;top:50%;
+    transform:translateY(-50%);
+    width:38px;height:38px;
+    background:var(--amber);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Zen Kurenaido",serif;
+    font-size:20px;
+  }
+  .step h3{font-size:16px;margin-bottom:4px}
+  .step p{font-size:14px;color:var(--ink-soft)}
+  .area-box{
+    text-align:center;
+    background:var(--paper-dark);
+    border-radius:14px;
+    padding:32px 20px;
+    border:1px dashed rgba(107,90,80,.35);
+  }
+  .area-box p{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
+  .area-box strong{color:var(--amber-dark);font-size:18px}
+  .beacon{margin-top:24px;font-size:13.5px;color:var(--ink-soft)}
+  .footer-cta{text-align:center;padding:64px 0 48px}
+  footer{
+    text-align:center;
+    padding:32px 0 48px;
+    font-size:12px;
+    color:var(--ink-soft);
+    border-top:1px dashed rgba(107,90,80,.35);
+  }
+  footer a{color:var(--amber-dark);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo">～ 近所ごはんノート ～</div>
+  </header>
+
+  <div class="hero">
+    <h1>本庄の<span class="accent">地元めし</span>を、<br>みんなで記録する。</h1>
+    <p class="lead">
+      チェーン店じゃない、あの角の定食屋さん。<br>
+      家族で続けてきた喫茶店。通いたくなる一軒を、LINEでそっと記録していきましょう。
+    </p>
+    <a class="cta" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener">
+      LINEで友だち追加する
+      <small>@kinjogohan</small>
+    </a>
+  </div>
+
+  <section>
+    <h2>近所ごはんノートとは</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>地元の一軒を応援</h3>
+        <p>本庄市とその周辺の、個人経営の飲食店だけを紹介するLINE公式アカウントです。</p>
+      </div>
+      <div class="card">
+        <h3>来店を自動で記録</h3>
+        <p>お店に設置されたビーコンで、来店がそっと記録されます。難しい操作はいりません。</p>
+      </div>
+      <div class="card">
+        <h3>めぐるほど楽しい</h3>
+        <p>いろんなお店をめぐると、スタンプがたまります。地域をまわる口実になります。</p>
+      </div>
+      <div class="card">
+        <h3>お店にもやさしく</h3>
+        <p>加盟店さんには来店データを共有。次の一手を考えるヒントになります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方は、かんたん３ステップ</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>LINEで友だち追加</h3>
+        <p>近所ごはんノートの公式アカウントを友だち追加します。</p>
+      </div>
+      <div class="step">
+        <h3>お店にでかける</h3>
+        <p>加盟店に入ると、Bluetoothで自動的に来店が記録されます。</p>
+      </div>
+      <div class="step">
+        <h3>スタンプがたまる</h3>
+        <p>たまったスタンプで、ささやかな特典をお楽しみいただけます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>対象エリア</h2>
+    <div class="area-box">
+      <p>今のところ、こんなエリアで広がっています</p>
+      <strong>埼玉県 本庄市 / 児玉郡 / 近隣市町村</strong>
+      <p class="beacon">※加盟店にはLINEビーコン（Bluetooth発信機）を設置いただきます。<br>スマホのBluetoothがONのとき、自動で来店を検知します。</p>
+    </div>
+  </section>
+
+  <div class="footer-cta">
+    <h2>さあ、今日のごはんを記録しよう</h2>
+    <a class="cta" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener">
+      LINEで友だち追加する
+      <small>@kinjogohan</small>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  運営：合同会社CFJapan ／ 埼玉県本庄市<br>
+  © 近所ごはんノート
+</footer>
+
+</body>
+</html>
